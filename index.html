@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carta Mágica de Hello Kitty & Kuromi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffe6f0, #e3d2ff);
+      font-family: 'Pacifico', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .carta {
+      background: #fff;
+      border: 4px dashed #ff66c4;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.1);
+      padding: 30px 25px;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    .carta:active {
+      transform: scale(0.98);
+    }
+
+    .carta h2 {
+      margin: 0;
+      font-size: 22px;
+      color: #cc2e72;
+    }
+
+    .carta p {
+      font-size: 16px;
+      color: #7a306c;
+    }
+
+    .mensaje-magico {
+      color: transparent;
+      visibility: hidden;
+      font-size: 20px;
+      font-weight: bold;
+      transition: color 0.8s ease, visibility 0.8s ease;
+      margin-top: 30px;
+    }
+
+    .revelado {
+      color: #d63384;
+      visibility: visible;
+    }
+
+    .instruccion {
+      font-size: 13px;
+      color: #888;
+      margin-top: 15px;
+    }
+
+    .hello-kuromi {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carta" onclick="revelarMensaje()">
+    <div class="hello-kuromi">🎀 🖤</div>
+    <h2>Hola, mi personita favorita</h2>
+    <p>
+      Esta cartita es especial, como tú...<br>
+      Y tiene un secreto que solo el amor puede revelar.
+    </p>
+
+    <p id="mensaje" class="mensaje-magico">
+      Te amo más que Hello Kitty ama los moños 💕<br>
+      Y más que Kuromi ama hacer travesuras 🖤
+    </p>
+
+    <div class="instruccion">(Intenta revelar el mensajito mágico)</div>
+  </div>
+
+  <script>
+    function revelarMensaje() {
+      const mensaje = document.getElementById('mensaje');
+      mensaje.classList.toggle('revelado');
+    }
+  </script>
+
+</body>
+</html>
